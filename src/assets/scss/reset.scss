@@ -1,0 +1,37 @@
+@charset 'utf-8';
+
+/* reset */
+html, body {
+  margin: 0;
+  padding: 0;
+	position: relative;
+	font-size: 13px;
+	&.show_overlay { overflow-y: hidden; }
+}
+button, input, select,
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+}
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Anchor */
+a {
+	text-decoration: none;
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+b, strong, em {
+	font-style: normal;
+	font-weight: normal;
+}
+strong { font-weight: 700; }

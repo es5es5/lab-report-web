@@ -1,6 +1,6 @@
 <template>
-  <div class="week_board_list">
-    asdf
+  <div class="week_report_list">
+    week_report_list
   </div>
 </template>
 

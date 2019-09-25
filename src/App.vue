@@ -2,27 +2,30 @@
   <div id="app" class="clearfix">
     <div class="header_wrap">
       <Header></Header>
+      <SubHeader></SubHeader>
     </div>
-
-    <aside>
+    <aside class="sideBar_wrap">
       <SideBar></SideBar>
     </aside>
-
-    <transition name="fade" mode="out-in">
-      <router-view></router-view>
-    </transition>
+    <div class="mainLayout_wrap">
+      <MainLayout></MainLayout>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
+import SubHeader from './components/SubHeader'
 import SideBar from './components/SideBar'
+import MainLayout from './components/MainLayout'
 
 export default {
   name: 'app',
   components: {
     Header,
-    SideBar
+    SubHeader,
+    SideBar,
+    MainLayout
   }
 }
 </script>
@@ -33,10 +36,15 @@ export default {
 
 #app { height: 100%; }
 
-aside {
+.sideBar_wrap {
   float: left;
   width: 10%;
 }
+.main_layout_wrap {
+  float: left;
+  width: 90%;
+}
+
 .fade-enter-active,
 .fade-leave-active { transition: opacity .1s }
 

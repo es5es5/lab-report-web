@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+// Import routes
+import ReportRoutes from './templates/report/routes'
+
 Vue.use(Router)
 
 export default new Router({
@@ -9,7 +12,10 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: () => import('./components/MainLayout')
+      component: () => import('./components/MainLayout'),
+      children: [
+        ...ReportRoutes
+      ]
     }
   ]
 })

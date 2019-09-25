@@ -1,6 +1,8 @@
 <template>
   <div id="main_layout">
-    main_layout
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 

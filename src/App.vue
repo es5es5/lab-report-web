@@ -4,19 +4,13 @@
       <Header></Header>
       <SubHeader></SubHeader>
     </div>
-    <aside class="sideBar_wrap">
-      <SideBar></SideBar>
-    </aside>
-    <div class="mainLayout_wrap">
-      <MainLayout></MainLayout>
-    </div>
+    <MainLayout></MainLayout>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
 import SubHeader from './components/SubHeader'
-import SideBar from './components/SideBar'
 import MainLayout from './components/MainLayout'
 
 export default {
@@ -24,7 +18,6 @@ export default {
   components: {
     Header,
     SubHeader,
-    SideBar,
     MainLayout
   }
 }
@@ -35,15 +28,6 @@ export default {
 @import '@/assets/scss/cmm.scss';
 
 #app { height: 100%; }
-
-.sideBar_wrap {
-  float: left;
-  width: 10%;
-}
-.main_layout_wrap {
-  float: left;
-  width: 90%;
-}
 
 .fade-enter-active,
 .fade-leave-active { transition: opacity .1s }

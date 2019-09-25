@@ -1,8 +1,6 @@
 <template>
   <div id="main_layout">
-    <transition name="fade" mode="out-in">
-      <router-view></router-view>
-    </transition>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -17,4 +15,9 @@ export default {
   background-color: beige;
   min-height: 500px;
 }
+.fade-enter-active,
+.fade-leave-active { transition: opacity .3s }
+
+.fade-enter,
+.fade-leave-to { opacity: 0 }
 </style>

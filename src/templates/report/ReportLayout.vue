@@ -3,9 +3,11 @@
     <aside class="sideBar_wrap">
       <SideBar></SideBar>
     </aside>
-    <transition name="fade" mode="out-in">
-      <router-view></router-view>
-    </transition>
+    <div class="content">
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -24,5 +26,9 @@ export default {
 .sideBar_wrap {
   float: left;
   width: 10%;
+}
+.content {
+  float: left;
+  width: 90%;
 }
 </style>

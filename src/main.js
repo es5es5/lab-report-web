@@ -2,7 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+
 import './plugins/element.js'
+import './plugins/bootstrap-vue'
+import './plugins/semantic-ui-vue'
+
+import '@babel/polyfill'
+import 'mutationobserver-shim'
 
 Vue.config.productionTip = false
 

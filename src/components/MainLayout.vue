@@ -12,7 +12,6 @@ export default {
 
 <style lang="scss" scoped>
 #main_layout {
-  background-color: beige;
   min-height: 500px;
 }
 .fade-enter-active,

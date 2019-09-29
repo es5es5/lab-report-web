@@ -29,7 +29,7 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
   let routeMetaTitle = to.meta.title
   if (routeMetaTitle === undefined || routeMetaTitle === '') {
-    document.title = `생체대사실험실`
+    document.title = '생체대사실험실'
   } else {
     document.title = `${to.meta.title} | 생체대사실험실`
   }

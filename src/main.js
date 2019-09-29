@@ -7,6 +7,7 @@ import './plugins/element.js'
 import './plugins/bootstrap-vue'
 import './plugins/semantic-ui-vue'
 import './plugins/moment'
+import './plugins/vue-quill-editor'
 
 import '@babel/polyfill'
 import 'mutationobserver-shim'

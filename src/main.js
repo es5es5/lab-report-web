@@ -6,6 +6,7 @@ import store from './store'
 import './plugins/element.js'
 import './plugins/bootstrap-vue'
 import './plugins/semantic-ui-vue'
+import './plugins/moment'
 
 import '@babel/polyfill'
 import 'mutationobserver-shim'

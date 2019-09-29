@@ -1,8 +1,13 @@
+@charset 'utf-8';
+
+.crudForm {
+  @include clearfix;
+
+  padding: 10px;
+  width: 70%;
+}
+
 form {
-  &.crudForm {
-    padding: 10px;
-    width: 50%;
-  }
   .el-form-item {
     margin-bottom: 10px !important;
     label {
@@ -12,12 +17,20 @@ form {
       font-size: 1.4em;
     }
   }
-  .action_wrap {
-    &.action_wrap--bottom {
-      margin-top: 4px;
-    }
-  }
 }
 .quill-editor .ql-container .ql-editor {
   min-height: 30em;
+}
+
+.action_wrap {
+  @include clearfix;
+
+  &.action_wrap--top {
+    // border-bottom: 1px dashed $gray-light-2;
+    padding-bottom: 4px;
+  }
+  &.action_wrap--bottom {
+    border-top: 1px dashed $gray-light-2;
+    padding-top: 6px;
+  }
 }

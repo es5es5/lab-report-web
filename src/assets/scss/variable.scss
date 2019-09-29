@@ -1,0 +1,38 @@
+/* color */
+$gray-dark: rgb(85,90,95); // #555a5f
+$gray-light-1: rgb(240,240,240); // #f0f0f0
+$gray-light-2: rgb(195,200,205); // #c3c8cd
+$gray-light-3:  rgb(220,220,220); // #dcdcdc / table border color,
+$gray-light-4: rgb(253,253,253); // #fdfdfd / table td color
+$gray-light-5: rgb(235,240,245); // table tfoot color
+
+$white-gray: rgb(250,250,250); // #fafafa
+
+$primary: rgb(0,210,49); // #00d232
+$primary-light: rgba(0,210,49,.3); // #00d232
+$red: rgb(240,60,60); // #f03c3c
+$red-light: rgb(224,180,180); // #e0b4b4
+$orange: rgb(255,160,0); // #ffa000
+$skyblue: rgb(133,183,217); // #85b7d9
+$skyblue-light: rgba(133,183,217,.3); // #85b7d9
+$blue: rgb(87,128,152); // #cbd2d6
+$purple: rgb(138,73,195); // #8a49c3
+
+/* fonts */
+@mixin font-family($font-name) {
+	font-family: $font-name, Helvetica, Arial, sans-serif;
+}
+
+@mixin clearfix() {
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin ellipsis() {
+	white-space: nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}

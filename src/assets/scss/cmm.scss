@@ -32,3 +32,11 @@ body { overflow: visible; }
 @media print {
 	.print_hidden { display: none !important; }
 }
+
+@mixin clearfix() {
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}

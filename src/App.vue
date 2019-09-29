@@ -26,6 +26,7 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/reset.scss';
 @import '@/assets/scss/cmm.scss';
+@import '@/assets/scss/index.scss';
 
 #app { height: 100%; }
 

@@ -1,0 +1,23 @@
+form {
+  &.crudForm {
+    padding: 10px;
+    width: 50%;
+  }
+  .el-form-item {
+    margin-bottom: 10px !important;
+    label {
+      font-size: 1.6em;
+    }
+    .el-input {
+      font-size: 1.4em;
+    }
+  }
+  .action_wrap {
+    &.action_wrap--bottom {
+      margin-top: 4px;
+    }
+  }
+}
+.quill-editor .ql-container .ql-editor {
+  min-height: 30em;
+}

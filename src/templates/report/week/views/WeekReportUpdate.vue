@@ -3,7 +3,7 @@
     <form action="#" method="get" class="crudForm" @submit.prevent>
       <el-form :model="ruleForm" label-width="15%">
         <el-form-item label="제목" prop="title">
-          <el-input v-model="reportForm.title" id="title"></el-input>
+          <el-input :value="`9월 ${this._reportId}주차 주간업무보고서입니다.`" id="title" disabled></el-input>
         </el-form-item>
         <el-form-item label="내용" prop="title">
           <quillEditor v-model="reportForm.contents"></quillEditor>
@@ -27,7 +27,11 @@ export default {
   components: {
     quillEditor
   },
-  computed: {},
+  computed: {
+    _reportId () {
+      return this.$route.params.reportId
+    }
+  },
   data () {
     return {
       reportForm: {

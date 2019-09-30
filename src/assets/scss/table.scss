@@ -1,4 +1,7 @@
 @charset 'utf-8';
 
-.table_wrap {
+.table_wrap.hover {
+  tbody {
+    cursor: pointer;
+  }
 }

@@ -4,7 +4,7 @@
       <div class="action_wrap action_wrap--top">
         <el-button type="primary" @click="goCreate">등록</el-button>
       </div>
-      <div class="table_wrap">
+      <div class="table_wrap hover">
         <sui-table celled striped color="blue">
           <sui-table-header>
             <sui-table-row>
@@ -14,7 +14,7 @@
             </sui-table-row>
           </sui-table-header>
           <sui-table-body>
-            <sui-table-row v-for="(item, index) in 5" :key="index">
+            <sui-table-row v-for="(item, index) in 5" :key="index" @click="goUpdate(index + 1)">
               <sui-table-cell>9월 {{ index + 1 }}주차 주간업무보고서입니다.</sui-table-cell>
               <sui-table-cell>김혜진 (박사과정)</sui-table-cell>
               <sui-table-cell>{{ _someday }}</sui-table-cell>
@@ -49,6 +49,14 @@ export default {
     goCreate () {
       this.$router.push({
         name: 'WeekReportCreate'
+      })
+    },
+    goUpdate (index) {
+      this.$router.push({
+        name: 'WeekReportUpdate',
+        params: {
+          reportId: index
+        }
       })
     }
   }

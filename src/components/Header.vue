@@ -1,12 +1,19 @@
 <template>
   <div id="header">
-    <h1>HEADER</h1>
+    <h1 @click="goHome">HEADER</h1>
   </div>
 </template>
 
 <script>
 export default {
-
+  name: 'Header',
+  methods: {
+    goHome () {
+      this.$router.push({
+        name: 'Home'
+      })
+    }
+  }
 }
 </script>
 

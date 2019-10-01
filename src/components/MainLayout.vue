@@ -1,12 +1,22 @@
 <template>
-  <div id="main_layout">
+  <div id="main_layout" class="clearfix">
+    <div class="header_wrap">
+      <Header></Header>
+      <SubHeader></SubHeader>
+    </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
+import Header from './Header'
+import SubHeader from './SubHeader'
 
+export default {
+  components: {
+    Header,
+    SubHeader
+  }
 }
 </script>
 

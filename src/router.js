@@ -14,8 +14,14 @@ let router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/home',
+      name: 'Home',
+      component: () => import('./components/Home')
+    },
+    {
       path: '/',
       redirect: '/report/week',
+      name: 'Main',
       component: () => import('./components/MainLayout'),
       children: [
         ...ReportRoutes,

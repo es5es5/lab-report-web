@@ -1,25 +1,12 @@
 <template>
-  <div id="app" class="clearfix">
-    <div class="header_wrap">
-      <Header></Header>
-      <SubHeader></SubHeader>
-    </div>
-    <MainLayout></MainLayout>
+  <div id="app">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Header from './components/Header'
-import SubHeader from './components/SubHeader'
-import MainLayout from './components/MainLayout'
-
 export default {
-  name: 'app',
-  components: {
-    Header,
-    SubHeader,
-    MainLayout
-  }
+  name: 'app'
 }
 </script>
 

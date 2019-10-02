@@ -11,6 +11,7 @@
     "bootstrap-vue": "^2.0.0-rc.19",
     "core-js": "^2.6.5",
     "element-ui": "^2.4.5",
+    "imagehover.css": "^2.0.0",
     "moment": "^2.24.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-vue": "^0.8.1",

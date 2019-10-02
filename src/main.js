@@ -8,6 +8,7 @@ import './plugins/bootstrap-vue'
 import './plugins/semantic-ui-vue'
 import './plugins/moment'
 import './plugins/vue-quill-editor'
+import './plugins/image-hover'
 
 import '@babel/polyfill'
 import 'mutationobserver-shim'

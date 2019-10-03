@@ -12,10 +12,10 @@
 
     <section class="content">
       <div class="figure_container">
-        <div class="figure_wrap" v-for="(item, index) in 4" :key="`figure_${index}`">
+        <!-- <div class="figure_wrap" v-for="(item, index) in 4" :key="`figure_${index}`"> -->
+        <div class="figure_wrap">
           <figure class="imghvr-blur">
-            <img src="" alt="">
-            <img class="figure_image" src="@/assets/img/logo.png">
+            <img class="figure_image" src="@/assets/img/samples/sample1.jpg">
             <figcaption>
               <h3 class="img-title">TITLE</h3>
               <span class="img-content">content</span>
@@ -23,6 +23,81 @@
             <!-- <a href="http://www.imagehover.io"></a> -->
           </figure>
         </div>
+        <div class="figure_wrap">
+          <figure class="imghvr-blur">
+            <img class="figure_image" src="@/assets/img/samples/sample2.jpg">
+            <figcaption>
+              <h3 class="img-title">TITLE</h3>
+              <span class="img-content">content</span>
+            </figcaption>
+            <!-- <a href="http://www.imagehover.io"></a> -->
+          </figure>
+        </div>
+        <div class="figure_wrap">
+          <figure class="imghvr-blur">
+            <img class="figure_image" src="@/assets/img/samples/sample3.jpg">
+            <figcaption>
+              <h3 class="img-title">TITLE</h3>
+              <span class="img-content">content</span>
+            </figcaption>
+            <!-- <a href="http://www.imagehover.io"></a> -->
+          </figure>
+        </div>
+        <div class="figure_wrap">
+          <figure class="imghvr-blur">
+            <img class="figure_image" src="@/assets/img/samples/sample4.jpg">
+            <figcaption>
+              <h3 class="img-title">TITLE</h3>
+              <span class="img-content">content</span>
+            </figcaption>
+            <!-- <a href="http://www.imagehover.io"></a> -->
+          </figure>
+        </div>
+        <div class="figure_wrap">
+          <figure class="imghvr-blur">
+            <img class="figure_image" src="@/assets/img/samples/sample4.jpg">
+            <figcaption>
+              <h3 class="img-title">TITLE</h3>
+              <span class="img-content">content</span>
+            </figcaption>
+            <!-- <a href="http://www.imagehover.io"></a> -->
+          </figure>
+        </div>
+        <div class="figure_wrap">
+          <figure class="imghvr-blur">
+            <img class="figure_image" src="@/assets/img/samples/sample1.jpg">
+            <figcaption>
+              <h3 class="img-title">TITLE</h3>
+              <span class="img-content">content</span>
+            </figcaption>
+            <!-- <a href="http://www.imagehover.io"></a> -->
+          </figure>
+        </div>
+        <div class="figure_wrap">
+          <figure class="imghvr-blur">
+            <img class="figure_image" src="@/assets/img/samples/sample2.jpg">
+            <figcaption>
+              <h3 class="img-title">TITLE</h3>
+              <span class="img-content">content</span>
+            </figcaption>
+            <!-- <a href="http://www.imagehover.io"></a> -->
+          </figure>
+        </div>
+        <div class="figure_wrap">
+          <figure class="imghvr-blur">
+            <img class="figure_image" src="@/assets/img/samples/sample3.jpg">
+            <figcaption>
+              <h3 class="img-title">TITLE</h3>
+              <span class="img-content">content</span>
+            </figcaption>
+            <!-- <a href="http://www.imagehover.io"></a> -->
+          </figure>
+        </div>
+      </div>
+      <!-- /figure_container-->
+
+      <div class="board">
+        asdf
       </div>
     </section>
 
@@ -68,7 +143,14 @@
 
 <script>
 export default {
-
+  name: 'Home',
+  methods: {
+    goHome () {
+      this.$router.push({
+        name: 'Home'
+      })
+    }
+  }
 }
 </script>
 
@@ -86,6 +168,8 @@ export default {
     position: absolute;
     top: 20px;
     left: 20px;
+
+    cursor: pointer;
     display: inline-block;
     vertical-align: middle;
     background: url('../assets/img/logo.png') no-repeat;
@@ -133,26 +217,22 @@ export default {
 .content {
   // background-color: green; // dummy
 
-  position: relative;
   min-height: 100vh;
 
   .figure_container {
     // background-color: pink; // dummy
 
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translate(-50%, 0);
-
+    margin: 0 auto;
     width: 60vw;
     text-align: center;
+    vertical-align: middle;
 
     .figure_wrap {
       // background-color: yellowgreen; // dummy
 
       display: inline-block;
       width: 10vw;
-      margin: 20px 40px;
+      margin: 1vh 2vw;
 
       figure {
         min-width: 200px;

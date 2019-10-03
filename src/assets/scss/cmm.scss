@@ -40,3 +40,17 @@ body { overflow: visible; }
 		clear: both;
 	}
 }
+
+@font-face {
+  font-family: 'Dokdo';
+  src: local('독도'),
+       url('~@/assets/fonts/Dokdo-Regular.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Gugi';
+  src: local('구기'),
+       url('~@/assets/fonts/Gugi-Regular.ttf') format('truetype');
+  font-weight: 300;
+}

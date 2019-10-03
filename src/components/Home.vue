@@ -15,7 +15,7 @@
           <h2 class="title">KNU <span class="title title--labName"><strong class="title title--initial">생</strong>체대사<strong class="title title--initial">조</strong>절학</span> Lab.</h2>
         </div>
         <div class="figure_container">
-          <div class="figure_wrap" v-for="(item, index) in 12" :key="`figure_${index}`">
+          <div class="figure_wrap" v-for="(item, index) in 4" :key="`figure_${index}`">
             <figure class="imghvr-blur">
               <img src="" alt="">
               <img class="figure_image" src="@/assets/img/logo.png">
@@ -29,8 +29,18 @@
         </div>
       </section>
 
-      <section>
-        <div class="footer"></div>
+      <section class="footer">
+        <div class="site_wrap">
+          <div class="site">
+            <a href="https://library.kangwon.ac.kr/" target="_blank">
+              <img class="siteImage" src="@/assets/img/pictogram/books64.png" alt="girl"><br>
+              <span class="siteName">도서관</span>
+            </a>
+          </div>
+        </div>
+        <div class="info_wrap">
+          <h3></h3>
+        </div>
       </section>
     </div>
   </div>
@@ -44,24 +54,11 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/reset.scss';
-@font-face {
-  font-family: 'Dokdo';
-  src: local('독도'),
-       url('~@/assets/fonts/Dokdo-Regular.ttf') format('truetype');
-  font-weight: 300;
-}
-@font-face {
-  font-family: 'Gugi';
-  src: local('구기'),
-       url('~@/assets/fonts/Gugi-Regular.ttf') format('truetype');
-  font-weight: 300;
-}
-
 // 배경
 #background_cover {
   background: url('../assets/img/home_cover2.jpg') center center / cover no-repeat;
   width: auto;
-  height: 900px;
+  height: 800px;
 }
 
 // 헤더
@@ -88,11 +85,12 @@ export default {
 
 // 본문
 .content {
-  // background-color: green;
+  // background-color: green; // dummy
 
   display: block;
-  margin: 430px - 80px auto 0 auto;
+  margin: 330px - 80px auto 0 auto;
   max-width: auto;
+  min-height: 1200px;
 
   .title_wrap {
     margin: 0 auto 160px auto;
@@ -100,7 +98,8 @@ export default {
 
     .title {
       font-family: Gugi;
-      font-size: 55px;
+      // font-size: 2.5rem;
+      font-size: 40px;
       color: #333444;
 
       &.title--labName {
@@ -108,11 +107,12 @@ export default {
         color: #222;
         font-weight: bold;
       }
+
       &.title--initial {
         background: linear-gradient(to right, #333, #222444);
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-size: 1.2em;
+        font-size: 1.25em;
         // color: #222444;
         font-weight: bold;
       }
@@ -120,23 +120,23 @@ export default {
   }
 
   .figure_container {
-    // background-color: pink;
+    // background-color: pink; // dummy
 
     margin: 0 auto;
-    min-width: 600px;
-    width: 1200px;
+    width: 60vw;
     text-align: center;
 
     .figure_wrap {
-      // background-color: yellowgreen;
+      // background-color: yellowgreen; // dummy
 
       display: inline-block;
-      max-width: 300px;
+      width: 10vw;
       margin: 20px 40px;
 
       figure {
         min-width: 200px;
         min-height: 200px;
+        background-color: rgba(255, 255, 255, 0);
 
         .figure_image {
           max-width: 200px;
@@ -146,6 +146,7 @@ export default {
 
       figcaption {
         text-align: center;
+        background-color: rgba(255, 255, 255, 0);
 
         .img-title {
           font-size: 2em;
@@ -161,6 +162,31 @@ export default {
         }
       }
     }
+  }
+}
+
+.footer {
+  background-color: $gray-light-2;
+  height: 120px;
+
+  .site_wrap {
+    .site {
+      display: inline-block;
+      padding: 10px;
+      text-align: center;
+      border: 1px dashed $skyblue;
+      border-radius: 10px;
+
+      .siteName {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media ( max-width: 1400px ) {
+  .title {
+    font-size: 0.8rem;
   }
 }
 

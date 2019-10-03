@@ -1,48 +1,68 @@
 <template>
   <div id="home">
-    <div id="background_cover">
-      <section class="header">
-        <div class="header_inner">
-          <div class="logo" />
-          <div class="login_wrap">
-            <span>로그인</span><span>|</span><span>회원가입</span>
-          </div>
-        </div>
-      </section>
+    <section class="header">
+      <h1 class="logo"></h1>
+      <div class="login_wrap">
+        <span>로그인</span><span>|</span><span>회원가입</span>
+      </div>
+      <div class="title_wrap">
+        <h2 class="title">KNU <span class="title title--labName"><strong class="title title--initial">생</strong>체대사<strong class="title title--initial">조</strong>절학</span> Lab.</h2>
+      </div>
+    </section>
 
-      <section class="content">
-        <div class="title_wrap">
-          <h2 class="title">KNU <span class="title title--labName"><strong class="title title--initial">생</strong>체대사<strong class="title title--initial">조</strong>절학</span> Lab.</h2>
+    <section class="content">
+      <div class="figure_container">
+        <div class="figure_wrap" v-for="(item, index) in 4" :key="`figure_${index}`">
+          <figure class="imghvr-blur">
+            <img src="" alt="">
+            <img class="figure_image" src="@/assets/img/logo.png">
+            <figcaption>
+              <h3 class="img-title">TITLE</h3>
+              <span class="img-content">content</span>
+            </figcaption>
+            <!-- <a href="http://www.imagehover.io"></a> -->
+          </figure>
         </div>
-        <div class="figure_container">
-          <div class="figure_wrap" v-for="(item, index) in 4" :key="`figure_${index}`">
-            <figure class="imghvr-blur">
-              <img src="" alt="">
-              <img class="figure_image" src="@/assets/img/logo.png">
-              <figcaption>
-                <h3 class="img-title">TITLE</h3>
-                <span class="img-content">content</span>
-              </figcaption>
-              <!-- <a href="http://www.imagehover.io"></a> -->
-            </figure>
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="footer">
-        <div class="site_wrap">
-          <div class="site">
-            <a href="https://library.kangwon.ac.kr/" target="_blank">
-              <img class="siteImage" src="@/assets/img/pictogram/books64.png" alt="girl"><br>
-              <span class="siteName">도서관</span>
-            </a>
-          </div>
+    <section class="footer">
+      <div class="site_wrap">
+        <div class="site">
+          <a href="http://cals.kangwon.ac.kr/" target="_blank">
+            <img class="siteImage" src="@/assets/img/site/knu.png" alt="girl"><br>
+            <span class="siteName">KNU</span>
+          </a>
         </div>
-        <div class="info_wrap">
-          <h3></h3>
+        <div class="site">
+          <a href="http://cals.kangwon.ac.kr/" target="_blank">
+            <img class="siteImage" src="@/assets/img/site/school64.png" alt="girl"><br>
+            <span class="siteName">동생대</span>
+          </a>
         </div>
-      </section>
-    </div>
+        <div class="site">
+          <a href="https://library.kangwon.ac.kr/" target="_blank">
+            <img class="siteImage" src="@/assets/img/site/books64.png" alt="girl"><br>
+            <span class="siteName">도서관</span>
+          </a>
+        </div>
+        <div class="site">
+          <a href="https://www.riss.kr/" target="_blank">
+            <img class="siteImage" src="@/assets/img/site/riss.gif" alt="girl"><br>
+            <span class="siteName">RISS</span>
+          </a>
+        </div>
+        <div class="site">
+          <a href="http://www.ndsl.kr/" target="_blank">
+            <img class="siteImage" src="@/assets/img/site/ndsl.png" alt="girl"><br>
+            <span class="siteName">NDSL</span>
+          </a>
+        </div>
+      </div>
+      <div class="info_wrap">
+        <h3></h3>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -54,56 +74,46 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/reset.scss';
-// 배경
-#background_cover {
-  background: url('../assets/img/home_cover2.jpg') center center / cover no-repeat;
-  width: auto;
-  height: 800px;
-}
 
 // 헤더
 .header {
-  display: block;
-  height: 80px;
+  position: relative;
+  background: url('../assets/img/home_cover2.jpg') center center / cover no-repeat;
+  width: auto;
+  height: 45vh;
 
-  .header_inner {
-    .logo {
-      display: inline-block;
-      vertical-align: middle;
-      background: url('../assets/img/logo.png') no-repeat;
-      background-size: contain;
-      width: 4em;
-      height: 4em;
-    }
-    .login_wrap {
-      display: inline-block;
-      vertical-align: middle;
-      font-size: 2em;
-    }
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url('../assets/img/logo.png') no-repeat;
+    background-size: contain;
+    width: 5vh;
+    height: 5vh;
   }
-}
 
-// 본문
-.content {
-  // background-color: green; // dummy
-
-  display: block;
-  margin: 330px - 80px auto 0 auto;
-  max-width: auto;
-  min-height: 1200px;
+  .login_wrap {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 24px;
+  }
 
   .title_wrap {
-    margin: 0 auto 160px auto;
+    padding-top: 22vh;
     text-align: center;
 
     .title {
       font-family: Gugi;
-      // font-size: 2.5rem;
-      font-size: 40px;
+      font-size: calc(2vh + .2vw);
       color: #333444;
 
       &.title--labName {
-        font-size: 2em;
+        font-size: 2.5em;
         color: #222;
         font-weight: bold;
       }
@@ -118,11 +128,22 @@ export default {
       }
     }
   }
+}
+// 본문
+.content {
+  // background-color: green; // dummy
+
+  position: relative;
+  min-height: 100vh;
 
   .figure_container {
     // background-color: pink; // dummy
 
-    margin: 0 auto;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
     width: 60vw;
     text-align: center;
 
@@ -166,19 +187,40 @@ export default {
 }
 
 .footer {
-  background-color: $gray-light-2;
   height: 120px;
+  text-align: center;
+  background-color: $gray-light-2;
 
   .site_wrap {
+    // background-color: aquamarine; // dummy
+
+    padding: 10px;
+
     .site {
       display: inline-block;
-      padding: 10px;
+      vertical-align: middle;
       text-align: center;
+
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      margin: 0 .5vw;
+
       border: 1px dashed $skyblue;
       border-radius: 10px;
 
-      .siteName {
-        font-weight: bold;
+      a {
+        position: relative;
+        // vertical-align: middle;
+
+        img {
+          max-width: 64px;
+          max-height: 64px;
+        }
+
+        .siteName {
+          font-weight: bold;
+        }
       }
     }
   }

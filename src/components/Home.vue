@@ -11,6 +11,14 @@
     </section>
 
     <section class="content">
+      <div class="board_container">
+        <div class="board_wrap" v-for="(item, index) in 3" :key="`board_${index}`">
+          <nav class="board" :class="`nav${index + 1}`">
+          </nav>
+        </div>
+      </div>
+      <!-- /board_container -->
+
       <div class="figure_container">
         <!-- <div class="figure_wrap" v-for="(item, index) in 4" :key="`figure_${index}`"> -->
         <div class="figure_wrap">
@@ -96,13 +104,6 @@
       </div>
       <!-- /figure_container-->
 
-      <div class="board_container">
-        <div class="board_wrap" v-for="(item, index) in 8" :key="`board_${index}`">
-          <nav class="board">
-            asdf
-          </nav>
-        </div>
-      </div>
     </section>
 
     <section>
@@ -144,6 +145,7 @@
         </div>
       </footer>
     </section>
+    <!-- footer -->
   </div>
 </template>
 
@@ -166,7 +168,7 @@ export default {
 // 헤더
 section.header {
   position: relative;
-  background: url('../assets/img/home_cover2.jpg') center center / cover no-repeat;
+  background: url('../assets/img/cover/home_cover2.jpg') center center / cover no-repeat;
   width: auto;
   height: 45vh;
 
@@ -178,7 +180,7 @@ section.header {
     cursor: pointer;
     display: inline-block;
     vertical-align: middle;
-    background: url('../assets/img/logo.png') no-repeat;
+    background: url('../assets/img/logo/logo.png') no-repeat;
     background-size: contain;
     width: 5vh;
     height: 5vh;
@@ -222,9 +224,49 @@ section.header {
 // 본문
 section.content {
   // background-color: green; // dummy
+  background-color: #ddd;
 
   min-height: 100vh;
 
+  // 게시판 바로가기
+  .board_container {
+    // background-color: bisque; // dummy
+
+    margin: 0 auto 0 auto;
+    width: 72vw;
+    text-align: center;
+    vertical-align: middle;
+
+    .board_wrap {
+      // background-color: cadetblue; // dummy
+
+      display: inline-block;
+      width: 24vw;
+      height: 16vw;
+      padding: .5vw 0.25vw;
+
+      nav.board {
+        // background-color: violet; // dummy
+
+        background-color: #fff;
+        cursor: pointer;
+        height: 100%;
+        opacity: 0.75;
+
+        &.nav1 {
+          background: url('../assets/img/nav/board_nav1.jpg') center center / cover no-repeat;
+        }
+        &.nav2 {
+          background: url('../assets/img/nav/board_nav2.jpg') center center / cover no-repeat;
+        }
+        &.nav3 {
+          background: url('../assets/img/nav/board_nav3.jpg') center center / cover no-repeat;
+        }
+      }
+    }
+  }
+
+  // 사진첩
   .figure_container {
     // background-color: pink; // dummy
 
@@ -267,30 +309,6 @@ section.content {
           font-size: 1.6em;
           font-weight: normal;
         }
-      }
-    }
-  }
-
-  .board_container {
-    background-color: bisque; // dummy
-
-    margin: 10vh auto 0 auto;
-    width: 60vw;
-    text-align: center;
-    vertical-align: middle;
-
-    .board_wrap {
-      background-color: cadetblue; // dummy
-
-      display: inline-block;
-      width: 15vw;
-      height: 15vw;
-      padding: .5vw;
-
-      nav.board {
-        background-color: violet; // dummy
-        cursor: pointer;
-        height: 100%;
       }
     }
   }

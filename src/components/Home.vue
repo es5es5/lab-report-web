@@ -96,47 +96,53 @@
       </div>
       <!-- /figure_container-->
 
-      <div class="board">
-        asdf
+      <div class="board_container">
+        <div class="board_wrap" v-for="(item, index) in 8" :key="`board_${index}`">
+          <nav class="board">
+            asdf
+          </nav>
+        </div>
       </div>
     </section>
 
-    <section class="footer">
-      <div class="site_wrap">
-        <div class="site">
-          <a href="http://cals.kangwon.ac.kr/" target="_blank">
-            <img class="siteImage" src="@/assets/img/site/knu.png" alt="girl"><br>
-            <span class="siteName">KNU</span>
-          </a>
+    <section>
+      <footer>
+        <div class="site_wrap">
+          <div class="site">
+            <a href="http://cals.kangwon.ac.kr/" target="_blank">
+              <img class="siteImage" src="@/assets/img/site/knu.png" alt="girl"><br>
+              <span class="siteName">KNU</span>
+            </a>
+          </div>
+          <div class="site">
+            <a href="http://cals.kangwon.ac.kr/" target="_blank">
+              <img class="siteImage" src="@/assets/img/site/school64.png" alt="girl"><br>
+              <span class="siteName">동생대</span>
+            </a>
+          </div>
+          <div class="site">
+            <a href="https://library.kangwon.ac.kr/" target="_blank">
+              <img class="siteImage" src="@/assets/img/site/books64.png" alt="girl"><br>
+              <span class="siteName">도서관</span>
+            </a>
+          </div>
+          <div class="site">
+            <a href="https://www.riss.kr/" target="_blank">
+              <img class="siteImage" src="@/assets/img/site/riss.gif" alt="girl"><br>
+              <span class="siteName">RISS</span>
+            </a>
+          </div>
+          <div class="site">
+            <a href="http://www.ndsl.kr/" target="_blank">
+              <img class="siteImage" src="@/assets/img/site/ndsl.png" alt="girl"><br>
+              <span class="siteName">NDSL</span>
+            </a>
+          </div>
         </div>
-        <div class="site">
-          <a href="http://cals.kangwon.ac.kr/" target="_blank">
-            <img class="siteImage" src="@/assets/img/site/school64.png" alt="girl"><br>
-            <span class="siteName">동생대</span>
-          </a>
+        <div class="info_wrap">
+          <h3></h3>
         </div>
-        <div class="site">
-          <a href="https://library.kangwon.ac.kr/" target="_blank">
-            <img class="siteImage" src="@/assets/img/site/books64.png" alt="girl"><br>
-            <span class="siteName">도서관</span>
-          </a>
-        </div>
-        <div class="site">
-          <a href="https://www.riss.kr/" target="_blank">
-            <img class="siteImage" src="@/assets/img/site/riss.gif" alt="girl"><br>
-            <span class="siteName">RISS</span>
-          </a>
-        </div>
-        <div class="site">
-          <a href="http://www.ndsl.kr/" target="_blank">
-            <img class="siteImage" src="@/assets/img/site/ndsl.png" alt="girl"><br>
-            <span class="siteName">NDSL</span>
-          </a>
-        </div>
-      </div>
-      <div class="info_wrap">
-        <h3></h3>
-      </div>
+      </footer>
     </section>
   </div>
 </template>
@@ -158,7 +164,7 @@ export default {
 @import '@/assets/scss/reset.scss';
 
 // 헤더
-.header {
+section.header {
   position: relative;
   background: url('../assets/img/home_cover2.jpg') center center / cover no-repeat;
   width: auto;
@@ -214,7 +220,7 @@ export default {
   }
 }
 // 본문
-.content {
+section.content {
   // background-color: green; // dummy
 
   min-height: 100vh;
@@ -240,7 +246,7 @@ export default {
         background-color: rgba(255, 255, 255, 0);
 
         .figure_image {
-          max-width: 200px;
+          max-width: 10vw;
           height: auto;
         }
       }
@@ -264,9 +270,33 @@ export default {
       }
     }
   }
+
+  .board_container {
+    background-color: bisque; // dummy
+
+    margin: 10vh auto 0 auto;
+    width: 60vw;
+    text-align: center;
+    vertical-align: middle;
+
+    .board_wrap {
+      background-color: cadetblue; // dummy
+
+      display: inline-block;
+      width: 15vw;
+      height: 15vw;
+      padding: .5vw;
+
+      nav.board {
+        background-color: violet; // dummy
+        cursor: pointer;
+        height: 100%;
+      }
+    }
+  }
 }
 
-.footer {
+section footer {
   height: 120px;
   text-align: center;
   background-color: $gray-light-2;

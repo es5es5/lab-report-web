@@ -94,10 +94,6 @@
         <div class="figure_wrap">
           <figure class="imghvr-blur">
             <img class="figure_image" src="@/assets/img/samples/sample3.jpg">
-            <figcaption>
-              <h3 class="img-title">TITLE</h3>
-              <span class="img-content">content</span>
-            </figcaption>
             <!-- <a href="http://www.imagehover.io"></a> -->
           </figure>
         </div>
@@ -252,6 +248,12 @@ section.content {
         cursor: pointer;
         height: 100%;
         opacity: 0.75;
+        transition: all .3s;
+
+        &:hover {
+          transform: scale(1.025);
+          opacity: 1;
+        }
 
         &.nav1 {
           background: url('../assets/img/nav/board_nav1.jpg') center center / cover no-repeat;
@@ -338,9 +340,6 @@ section footer {
       border-radius: 10px;
 
       a {
-        position: relative;
-        // vertical-align: middle;
-
         img {
           max-width: 64px;
           max-height: 64px;
@@ -355,8 +354,28 @@ section footer {
 }
 
 @media ( max-width: 1400px ) {
-  .title {
-    font-size: 0.8rem;
+  section.header .title_wrap .title {
+    font-size: calc(1.8vh + .1vw);
+  }
+  .board_wrap {
+    nav.board {
+      display: inline-block;
+      width: 36vw;
+      height: auto;
+    }
+  }
+}
+
+@media ( max-width: 1200px ) {
+  section.header .title_wrap .title {
+    font-size: calc(1.6vh + .05vw);
+  }
+  .board_wrap {
+    nav.board {
+      display: inline-block;
+      width: 36vw;
+      height: auto;
+    }
   }
 }
 

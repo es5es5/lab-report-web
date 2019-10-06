@@ -12,14 +12,14 @@
 
     <section class="content">
       <div class="board_container">
-        <div class="board_wrap" v-for="(item, index) in 3" :key="`board_${index}`">
+        <div class="board_wrap" v-for="(item, index) in 6" :key="`board_${index}`">
           <nav class="board" :class="`nav${index + 1}`">
           </nav>
         </div>
       </div>
       <!-- /board_container -->
 
-      <div class="figure_container">
+      <div class="figure_container" v-if="false">
         <!-- <div class="figure_wrap" v-for="(item, index) in 4" :key="`figure_${index}`"> -->
         <div class="figure_wrap">
           <figure class="imghvr-blur">
@@ -104,38 +104,48 @@
 
     <section>
       <footer>
-        <div class="site_wrap">
+        <ul class="site_wrap">
+          <li class="site">
+            <div class="site_inner">
+              <a class="site-anchor" href="http://cals.kangwon.ac.kr/" target="_blank">
+                <img class="siteImage" src="@/assets/img/site/knu.png" alt="girl"><br>
+                <span class="siteName">KNU</span>
+              </a>
+            </div>
+          </li>
           <div class="site">
-            <a href="http://cals.kangwon.ac.kr/" target="_blank">
-              <img class="siteImage" src="@/assets/img/site/knu.png" alt="girl"><br>
-              <span class="siteName">KNU</span>
-            </a>
+            <div class="site_inner">
+              <a href="http://cals.kangwon.ac.kr/" target="_blank">
+                <img class="siteImage" src="@/assets/img/site/school64.png" alt="girl"><br>
+                <span class="siteName">동생대</span>
+              </a>
+            </div>
           </div>
           <div class="site">
-            <a href="http://cals.kangwon.ac.kr/" target="_blank">
-              <img class="siteImage" src="@/assets/img/site/school64.png" alt="girl"><br>
-              <span class="siteName">동생대</span>
-            </a>
+            <div class="site_inner">
+              <a href="https://library.kangwon.ac.kr/" target="_blank">
+                <img class="siteImage" src="@/assets/img/site/books64.png" alt="girl"><br>
+                <span class="siteName">도서관</span>
+              </a>
+            </div>
           </div>
           <div class="site">
-            <a href="https://library.kangwon.ac.kr/" target="_blank">
-              <img class="siteImage" src="@/assets/img/site/books64.png" alt="girl"><br>
-              <span class="siteName">도서관</span>
-            </a>
+            <div class="site_inner">
+              <a href="https://www.riss.kr/" target="_blank">
+                <img class="siteImage" src="@/assets/img/site/riss.gif" alt="girl"><br>
+                <span class="siteName">RISS</span>
+              </a>
+            </div>
           </div>
           <div class="site">
-            <a href="https://www.riss.kr/" target="_blank">
-              <img class="siteImage" src="@/assets/img/site/riss.gif" alt="girl"><br>
-              <span class="siteName">RISS</span>
-            </a>
+            <div class="site_inner">
+              <a href="http://www.ndsl.kr/" target="_blank">
+                <img class="siteImage" src="@/assets/img/site/ndsl.png" alt="girl"><br>
+                <span class="siteName">NDSL</span>
+              </a>
+            </div>
           </div>
-          <div class="site">
-            <a href="http://www.ndsl.kr/" target="_blank">
-              <img class="siteImage" src="@/assets/img/site/ndsl.png" alt="girl"><br>
-              <span class="siteName">NDSL</span>
-            </a>
-          </div>
-        </div>
+        </ul>
         <div class="info_wrap">
           <h3></h3>
         </div>
@@ -228,7 +238,8 @@ section.content {
   .board_container {
     // background-color: bisque; // dummy
 
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
+    padding-top: .3vw;
     width: 72vw;
     text-align: center;
     vertical-align: middle;
@@ -239,7 +250,7 @@ section.content {
       display: inline-block;
       width: 24vw;
       height: 16vw;
-      padding: .5vw 0.25vw;
+      padding: .3vw 0.3vw;
 
       nav.board {
         // background-color: violet; // dummy
@@ -317,38 +328,63 @@ section.content {
 }
 
 section footer {
-  height: 120px;
-  text-align: center;
+  height: calc(10vw + 10px);
   background-color: $gray-light-2;
 
   .site_wrap {
     // background-color: aquamarine; // dummy
 
     padding: 10px;
+    text-align: center;
 
     .site {
+      box-sizing: content-box;
+      position: relative;
       display: inline-block;
       vertical-align: middle;
       text-align: center;
 
-      width: 100px;
-      height: 100px;
-      padding: 10px;
-      margin: 0 .5vw;
+      width: 5.5vw;
+      padding-top: 5.5vw;
+      margin: 0 calc(4px + .1vw);
 
       border: 1px dashed $skyblue;
       border-radius: 10px;
 
-      a {
-        img {
-          max-width: 64px;
-          max-height: 64px;
-        }
+      .site_inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
 
-        .siteName {
-          font-weight: bold;
+        a {
+          img {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            max-width: 5vw;
+            max-height: 5vw;
+          }
+
+          .siteName {
+            position: absolute;
+            font-size: .5vw;
+            font-weight: bold;
+            padding: 4px 0;
+            bottom: -.05vw;
+            left: 50%;
+            transform: translate(-50%, 0);
+          }
+          @media ( max-width: 1400px ) {
+            .siteName {
+              display: none;
+            }
+          }
         }
       }
+
     }
   }
 }
@@ -357,25 +393,11 @@ section footer {
   section.header .title_wrap .title {
     font-size: calc(1.8vh + .1vw);
   }
-  .board_wrap {
-    nav.board {
-      display: inline-block;
-      width: 36vw;
-      height: auto;
-    }
-  }
 }
 
 @media ( max-width: 1200px ) {
   section.header .title_wrap .title {
     font-size: calc(1.6vh + .05vw);
-  }
-  .board_wrap {
-    nav.board {
-      display: inline-block;
-      width: 36vw;
-      height: auto;
-    }
   }
 }
 

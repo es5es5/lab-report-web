@@ -12,10 +12,16 @@
 
     <section class="content">
       <div class="board_container">
-        <div class="board_wrap" v-for="(item, index) in 6" :key="`board_${index}`">
-          <nav class="board" :class="`nav${index + 1}`">
-          </nav>
-        </div>
+        <ul class="board_wrap">
+          <li class="board" v-for="(item, index) in 3" :key="`board_${index}`">
+            <div class="board-cover" :class="`board-cover${index + 1}`">
+            </div>
+          </li>
+          <li class="board" v-for="(item, index) in 3" :key="`board_${index}`">
+            <div class="board-cover" :class="`board-cover${3 - index}`">
+            </div>
+          </li>
+        </ul>
       </div>
       <!-- /board_container -->
 
@@ -113,38 +119,38 @@
               </a>
             </div>
           </li>
-          <div class="site">
+          <li class="site">
             <div class="site_inner">
               <a href="http://cals.kangwon.ac.kr/" target="_blank">
                 <img class="siteImage" src="@/assets/img/site/school64.png" alt="girl"><br>
                 <span class="siteName">동생대</span>
               </a>
             </div>
-          </div>
-          <div class="site">
+          </li>
+          <li class="site">
             <div class="site_inner">
               <a href="https://library.kangwon.ac.kr/" target="_blank">
                 <img class="siteImage" src="@/assets/img/site/books64.png" alt="girl"><br>
                 <span class="siteName">도서관</span>
               </a>
             </div>
-          </div>
-          <div class="site">
+          </li>
+          <li class="site">
             <div class="site_inner">
               <a href="https://www.riss.kr/" target="_blank">
                 <img class="siteImage" src="@/assets/img/site/riss.gif" alt="girl"><br>
                 <span class="siteName">RISS</span>
               </a>
             </div>
-          </div>
-          <div class="site">
+          </li>
+          <li class="site">
             <div class="site_inner">
               <a href="http://www.ndsl.kr/" target="_blank">
                 <img class="siteImage" src="@/assets/img/site/ndsl.png" alt="girl"><br>
                 <span class="siteName">NDSL</span>
               </a>
             </div>
-          </div>
+          </li>
         </ul>
         <div class="info_wrap">
           <h3></h3>
@@ -170,6 +176,15 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/reset.scss';
+
+@keyframes upUp {
+  from {
+    -webkit-transform: translate(-50%, -30%);
+  }
+  to {
+    -webkit-transform: translate(-50%, -45%);
+  }
+}
 
 // 헤더
 section.header {
@@ -237,44 +252,51 @@ section.content {
   // 게시판 바로가기
   .board_container {
     // background-color: bisque; // dummy
-
-    margin: 0 auto;
-    padding-top: .3vw;
-    width: 72vw;
-    text-align: center;
-    vertical-align: middle;
-
     .board_wrap {
       // background-color: cadetblue; // dummy
+      margin: 0 auto;
+      padding: 10px;
+      width: 72vw;
+      text-align: center;
 
-      display: inline-block;
-      width: 24vw;
-      height: 16vw;
-      padding: .3vw 0.3vw;
-
-      nav.board {
+      .board {
         // background-color: violet; // dummy
 
-        background-color: #fff;
-        cursor: pointer;
-        height: 100%;
-        opacity: 0.75;
-        transition: all .3s;
+        position: relative;
+        float: left;
 
-        &:hover {
-          transform: scale(1.025);
-          opacity: 1;
+        width: 33.333%;
+        padding-top: 20%;
+
+        .board-cover {
+          position: absolute;
+          cursor: pointer;
+          opacity: 0.75;
+          transition: all .3s;
+
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          margin: 6px;
+          padding: 6px;
+
+          &:hover {
+            transform: scale(1.025);
+            opacity: 1;
+          }
+
+          &.board-cover1 {
+            background: url('../assets/img/board/board-cover1.jpg') center center / cover no-repeat;
+          }
+          &.board-cover2 {
+            background: url('../assets/img/board/board-cover2.jpg') center center / cover no-repeat;
+          }
+          &.board-cover3 {
+            background: url('../assets/img/board/board-cover3.jpg') center center / cover no-repeat;
+          }
         }
 
-        &.nav1 {
-          background: url('../assets/img/nav/board_nav1.jpg') center center / cover no-repeat;
-        }
-        &.nav2 {
-          background: url('../assets/img/nav/board_nav2.jpg') center center / cover no-repeat;
-        }
-        &.nav3 {
-          background: url('../assets/img/nav/board_nav3.jpg') center center / cover no-repeat;
-        }
       }
     }
   }
@@ -366,6 +388,13 @@ section footer {
             transform: translate(-50%, -30%);
             max-width: 5vw;
             max-height: 5vw;
+            transition: all .5s;
+            opacity: .8;
+
+            &:hover {
+              opacity: 1;
+              transform: translate(-50%, -45%);
+            }
           }
 
           .siteName {

@@ -15,11 +15,16 @@
         <ul class="board_wrap">
           <li class="board" v-for="(item, index) in 3" :key="`board_${index}`">
             <div class="board-cover" :class="`board-cover${index + 1}`">
-              <span class="board-title">타이틀</span>
+              <div class="board-cover-contents_wrap">
+                <span class="contents-title">주간업무보고서</span>
+              </div>
             </div>
           </li>
           <li class="board" v-for="(item, index) in 3" :key="`board_2${index}`">
             <div class="board-cover" :class="`board-cover${3 - index}`">
+              <div class="board-cover-contents_wrap">
+                <span class="contents-title">공지사항</span>
+              </div>
             </div>
           </li>
         </ul>
@@ -132,10 +137,10 @@ section.header {
     right: 1.4285rem;
     display: inline-block;
     vertical-align: middle;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 
     @media ( max-width: 1200px ) {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -222,7 +227,6 @@ section.content {
         .board-cover {
           position: absolute;
           cursor: pointer;
-          opacity: 0.75;
           transition: all .3s;
 
           top: 0;
@@ -232,13 +236,19 @@ section.content {
           margin: 6px;
           padding: 6px;
 
-          &:hover {
-            transform: scale(1.025);
-            opacity: 1;
+          .board-cover-contents_wrap {
+            opacity: 0;
+            font-size: 0;
+            padding-top: 25%;
+            transition: all .3s;
+            font-family: 'Gugi';
           }
 
           &.board-cover1 {
-            background: url('../assets/img/board/board-cover1.jpg') center center / cover no-repeat;
+            background: url('../assets/img/board/board-cover1.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
           }
           &.board-cover2 {
             background: url('../assets/img/board/board-cover2.jpg') center center / cover no-repeat;
@@ -246,8 +256,24 @@ section.content {
           &.board-cover3 {
             background: url('../assets/img/board/board-cover3.jpg') center center / cover no-repeat;
           }
-        }
+          &:hover {
+            transform: scale(1.025);
+            background-color: #fff;
+            border-radius: 1rem;
+            opacity: .8;
+            filter: blur(.5px);
 
+            .board-cover-contents_wrap {
+              opacity: 1;
+              font-size: 3rem;
+              text-align: center;
+
+              .contents-title {
+                display: inline-block;
+              }
+            }
+          }
+        }
       }
     }
   }

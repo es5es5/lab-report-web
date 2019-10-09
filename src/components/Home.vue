@@ -15,96 +15,16 @@
         <ul class="board_wrap">
           <li class="board" v-for="(item, index) in 3" :key="`board_${index}`">
             <div class="board-cover" :class="`board-cover${index + 1}`">
+              <span class="board-title">타이틀</span>
             </div>
           </li>
-          <li class="board" v-for="(item, index) in 3" :key="`board_${index}`">
+          <li class="board" v-for="(item, index) in 3" :key="`board_2${index}`">
             <div class="board-cover" :class="`board-cover${3 - index}`">
             </div>
           </li>
         </ul>
       </div>
       <!-- /board_container -->
-
-      <div class="figure_container" v-if="false">
-        <!-- <div class="figure_wrap" v-for="(item, index) in 4" :key="`figure_${index}`"> -->
-        <div class="figure_wrap">
-          <figure class="imghvr-blur">
-            <img class="figure_image" src="@/assets/img/samples/sample1.jpg">
-            <figcaption>
-              <h3 class="img-title">TITLE</h3>
-              <span class="img-content">content</span>
-            </figcaption>
-            <!-- <a href="http://www.imagehover.io"></a> -->
-          </figure>
-        </div>
-        <div class="figure_wrap">
-          <figure class="imghvr-blur">
-            <img class="figure_image" src="@/assets/img/samples/sample2.jpg">
-            <figcaption>
-              <h3 class="img-title">TITLE</h3>
-              <span class="img-content">content</span>
-            </figcaption>
-            <!-- <a href="http://www.imagehover.io"></a> -->
-          </figure>
-        </div>
-        <div class="figure_wrap">
-          <figure class="imghvr-blur">
-            <img class="figure_image" src="@/assets/img/samples/sample3.jpg">
-            <figcaption>
-              <h3 class="img-title">TITLE</h3>
-              <span class="img-content">content</span>
-            </figcaption>
-            <!-- <a href="http://www.imagehover.io"></a> -->
-          </figure>
-        </div>
-        <div class="figure_wrap">
-          <figure class="imghvr-blur">
-            <img class="figure_image" src="@/assets/img/samples/sample4.jpg">
-            <figcaption>
-              <h3 class="img-title">TITLE</h3>
-              <span class="img-content">content</span>
-            </figcaption>
-            <!-- <a href="http://www.imagehover.io"></a> -->
-          </figure>
-        </div>
-        <div class="figure_wrap">
-          <figure class="imghvr-blur">
-            <img class="figure_image" src="@/assets/img/samples/sample4.jpg">
-            <figcaption>
-              <h3 class="img-title">TITLE</h3>
-              <span class="img-content">content</span>
-            </figcaption>
-            <!-- <a href="http://www.imagehover.io"></a> -->
-          </figure>
-        </div>
-        <div class="figure_wrap">
-          <figure class="imghvr-blur">
-            <img class="figure_image" src="@/assets/img/samples/sample1.jpg">
-            <figcaption>
-              <h3 class="img-title">TITLE</h3>
-              <span class="img-content">content</span>
-            </figcaption>
-            <!-- <a href="http://www.imagehover.io"></a> -->
-          </figure>
-        </div>
-        <div class="figure_wrap">
-          <figure class="imghvr-blur">
-            <img class="figure_image" src="@/assets/img/samples/sample2.jpg">
-            <figcaption>
-              <h3 class="img-title">TITLE</h3>
-              <span class="img-content">content</span>
-            </figcaption>
-            <!-- <a href="http://www.imagehover.io"></a> -->
-          </figure>
-        </div>
-        <div class="figure_wrap">
-          <figure class="imghvr-blur">
-            <img class="figure_image" src="@/assets/img/samples/sample3.jpg">
-            <!-- <a href="http://www.imagehover.io"></a> -->
-          </figure>
-        </div>
-      </div>
-      <!-- /figure_container-->
 
     </section>
 
@@ -176,14 +96,8 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/reset.scss';
-
-@keyframes upUp {
-  from {
-    -webkit-transform: translate(-50%, -30%);
-  }
-  to {
-    -webkit-transform: translate(-50%, -45%);
-  }
+#home {
+  font-size: 14px;
 }
 
 // 헤더
@@ -191,38 +105,47 @@ section.header {
   position: relative;
   background: url('../assets/img/cover/home_cover2.jpg') center center / cover no-repeat;
   width: auto;
-  height: 45vh;
+  height: 28.57rem;
 
   .logo {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 1.4285rem;
+    left: 1.4285rem;
 
     cursor: pointer;
     display: inline-block;
     vertical-align: middle;
     background: url('../assets/img/logo/logo.png') no-repeat;
     background-size: contain;
-    width: 5vh;
-    height: 5vh;
+    width: 3.5rem;
+    height: 3.5rem;
+
+    @media ( max-width: 1200px ) {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 
   .login_wrap {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 1.4285rem;
+    right: 1.4285rem;
     display: inline-block;
     vertical-align: middle;
-    font-size: 24px;
+    font-size: 1.8rem;
+
+    @media ( max-width: 1200px ) {
+      font-size: 1.4rem;
+    }
   }
 
   .title_wrap {
-    padding-top: 22vh;
+    padding-top: 14rem;
     text-align: center;
 
     .title {
       font-family: Gugi;
-      font-size: calc(2vh + .2vw);
+      font-size: 2rem;
       color: #333444;
 
       &.title--labName {
@@ -242,12 +165,30 @@ section.header {
     }
   }
 }
+
+@media ( max-width: 1400px ) {
+  section.header .title_wrap .title {
+    font-size: 1.6rem;
+  }
+}
+
+@media ( max-width: 1200px ) {
+  section.header .title_wrap .title {
+    font-size: 1.4rem;
+  }
+}
+@media ( max-width: 550px ) {
+  section.header .title_wrap .title {
+    font-size: 1rem;
+  }
+}
+
 // 본문
 section.content {
   // background-color: green; // dummy
   background-color: #ddd;
 
-  min-height: 100vh;
+  min-height: 64rem;
 
   // 게시판 바로가기
   .board_container {
@@ -256,7 +197,7 @@ section.content {
       // background-color: cadetblue; // dummy
       margin: 0 auto;
       padding: 10px;
-      width: 72vw;
+      width: 72%;
       text-align: center;
 
       .board {
@@ -267,6 +208,16 @@ section.content {
 
         width: 33.333%;
         padding-top: 20%;
+
+        @media only screen and (max-width: 1200px)  {
+          width: 50%;
+          padding-top: 30%;
+        }
+
+        @media ( max-width: 550px ) {
+          width: 100%;
+          padding-top: 66.666%;
+        }
 
         .board-cover {
           position: absolute;
@@ -300,57 +251,10 @@ section.content {
       }
     }
   }
-
-  // 사진첩
-  .figure_container {
-    // background-color: pink; // dummy
-
-    margin: 0 auto;
-    width: 60vw;
-    text-align: center;
-    vertical-align: middle;
-
-    .figure_wrap {
-      // background-color: yellowgreen; // dummy
-
-      display: inline-block;
-      width: 10vw;
-      margin: 1vh 2vw;
-
-      figure {
-        min-width: 200px;
-        min-height: 200px;
-        background-color: rgba(255, 255, 255, 0);
-
-        .figure_image {
-          max-width: 10vw;
-          height: auto;
-        }
-      }
-
-      figcaption {
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0);
-
-        .img-title {
-          font-size: 2em;
-          font-weight: bold;
-        }
-
-        .img-content {
-          display: inline-block;
-
-          margin-top: 10px;
-          font-size: 1.6em;
-          font-weight: normal;
-        }
-      }
-    }
-  }
 }
 
 section footer {
-  height: calc(10vw + 10px);
+  height: calc(10% + 10rem);
   background-color: $gray-light-2;
 
   .site_wrap {
@@ -366,9 +270,9 @@ section footer {
       vertical-align: middle;
       text-align: center;
 
-      width: 5.5vw;
-      padding-top: 5.5vw;
-      margin: 0 calc(4px + .1vw);
+      width: 5.5%;
+      padding-top: 5.5%;
+      margin: 0 4px;
 
       border: 1px dashed $skyblue;
       border-radius: 10px;
@@ -386,8 +290,8 @@ section footer {
             top: 30%;
             left: 50%;
             transform: translate(-50%, -30%);
-            max-width: 5vw;
-            max-height: 5vw;
+            max-width: 4rem;
+            max-height: 4rem;
             transition: all .5s;
             opacity: .8;
 
@@ -399,10 +303,10 @@ section footer {
 
           .siteName {
             position: absolute;
-            font-size: .5vw;
+            font-size: .5%;
             font-weight: bold;
             padding: 4px 0;
-            bottom: -.05vw;
+            bottom: -.05%;
             left: 50%;
             transform: translate(-50%, 0);
           }
@@ -415,18 +319,6 @@ section footer {
       }
 
     }
-  }
-}
-
-@media ( max-width: 1400px ) {
-  section.header .title_wrap .title {
-    font-size: calc(1.8vh + .1vw);
-  }
-}
-
-@media ( max-width: 1200px ) {
-  section.header .title_wrap .title {
-    font-size: calc(1.6vh + .05vw);
   }
 }
 
